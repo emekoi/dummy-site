@@ -12,7 +12,7 @@ setup_branch() {
 }
 
 build_page() {
-  . build-commands.sh
+  . ./build-commands.sh
   git -C "$build_dir" add --all
   git -C "$build_dir" commit -m "deploy from $(git rev-parse "$head")"
   git -C "$build_dir" push origin "$site_branch"

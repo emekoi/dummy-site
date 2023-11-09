@@ -16,6 +16,7 @@ build_page() {
   ./build.sh > "$build_dir"/index.html
   git -C "$build_dir" add --all
   git -C "$build_dir" commit -m "deploy from $(git rev-parse "$head")"
+  git -C "$build_dir" push origin "$site_branch"
 }
 
 build_page_clean() {
